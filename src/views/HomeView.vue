@@ -3,7 +3,9 @@
     <section class="hero-split">
       <div class="glass-widget hero-text">
         <h2 class="greeting">Hi There,</h2>
-        <h1 class="name">I'm Ralph <span class="highlight">Gatuteo</span></h1>
+        <h1 class="name">
+          I'm Ralph Christian <span class="highlight">Gatuteo</span>
+        </h1>
 
         <div class="role-container">
           <span class="static-text">I Am Into</span>
