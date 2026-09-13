@@ -8,7 +8,7 @@
     <div class="contact-content">
       <!-- Left Column: Icon Cards -->
       <div class="contact-info">
-        <a href="mailto:hello@example.com" class="glass-widget info-card">
+        <a href="mailto:gatuteoralph@gmail.com" class="glass-widget info-card">
           <div class="icon-wrapper">
             <svg
               viewBox="0 0 24 24"
