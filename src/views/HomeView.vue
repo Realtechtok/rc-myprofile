@@ -4,7 +4,7 @@
       <div class="glass-widget hero-text">
         <h2 class="greeting">Hi There,</h2>
         <h1 class="name">
-          I'm Ralph Christian <span class="highlight">Gatuteo</span>
+          I'm Ralph Christian <span class="highlight"></span>
         </h1>
 
         <div class="role-container">
@@ -14,7 +14,7 @@
         </div>
 
         <p class="bio">
-          3rd-year BSIT student at Central Philippine University in Iloilo City.
+          3rd-year BSIT student at Central University in Iloilo City.
         </p>
 
         <router-link to="/about" class="btn-glass">

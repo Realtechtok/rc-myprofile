@@ -8,7 +8,7 @@
     <div class="contact-content">
       <!-- Left Column: Icon Cards -->
       <div class="contact-info">
-        <a href="mailto:gatuteoralph@gmail.com" class="glass-widget info-card">
+        <a href="mailto:ralph@gmail.com" class="glass-widget info-card">
           <div class="icon-wrapper">
             <svg
               viewBox="0 0 24 24"
@@ -24,7 +24,7 @@
           </div>
           <div class="info-text">
             <h3>Email</h3>
-            <p>gatuteoralph@gmail.com</p>
+            <p>ralph@gmail.com</p>
           </div>
         </a>
 
