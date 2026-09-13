@@ -11,7 +11,7 @@
         <h2 class="section-title">My Journey</h2>
         <p class="bio-text">
           I am a 3rd-year Bachelor of Science in Information Technology student
-          at Central University in Iloilo City. I have a deep
+          at Philippine University in Iloilo City. I have a deep
           curiosity for how things work behind the scenes, which drives my
           passion for building robust, end-to-end software solutions. Whether it
           is conceptualizing database schemas, writing backend logic, or
@@ -30,7 +30,7 @@
             Bachelor of Science in Information Technology
           </p>
           <p class="secondary-detail">
-            Central Philippine University, Iloilo City
+            Philippine University, Iloilo City
           </p>
           <p class="tertiary-detail">Current - 3rd Year</p>
         </div>

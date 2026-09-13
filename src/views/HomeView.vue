@@ -14,7 +14,7 @@
         </div>
 
         <p class="bio">
-          3rd-year BSIT student at Central University in Iloilo City.
+          3rd-year BSIT student at Philippine University in Iloilo City.
         </p>
 
         <router-link to="/about" class="btn-glass">
@@ -50,7 +50,7 @@
         <div class="widget-icon">🛠</div>
         <h2>Recent Systems</h2>
         <ul class="clean-list">
-          <li><strong>Gatuteo_Lending:</strong> Employee tracking database</li>
+          <li><strong>G_Lending:</strong> Employee tracking database</li>
           <li><strong>GHI Tailoring:</strong> Software digitization project</li>
           <li>
             <strong>iBenta & Bantay Barangay:</strong> IT Capstone proposals
