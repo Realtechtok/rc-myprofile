@@ -124,14 +124,13 @@
         </div>
       </div>
 
-      <!-- Right Column: Minimalist Form -->
       <form class="glass-widget contact-form" @submit.prevent="handleSubmit">
         <div class="input-group">
           <label for="name">Name</label>
           <input
             type="text"
             id="name"
-            placeholder="John Doe"
+            placeholder="Enter your name"
             class="glass-input"
             required
           />
@@ -142,7 +141,7 @@
           <input
             type="email"
             id="email"
-            placeholder="john@example.com"
+            placeholder="yourname@example.com"
             class="glass-input"
             required
           />
