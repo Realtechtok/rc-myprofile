@@ -130,6 +130,7 @@
           <input
             type="text"
             id="name"
+            v-model="form.name"
             placeholder="Enter your name"
             class="glass-input"
             required
@@ -141,6 +142,7 @@
           <input
             type="email"
             id="email"
+            v-model="form.email"
             placeholder="yourname@example.com"
             class="glass-input"
             required
@@ -152,14 +154,19 @@
           <textarea
             id="message"
             rows="4"
+            v-model="form.message"
             placeholder="How can I help you?"
             class="glass-input"
             required
           ></textarea>
         </div>
 
-        <button type="submit" class="btn-glass submit-btn">
-          Send Message
+        <button
+          type="submit"
+          class="btn-glass submit-btn"
+          :disabled="isSubmitting"
+        >
+          {{ isSubmitting ? "Sending..." : "Send Message" }}
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -171,15 +178,54 @@
             <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
           </svg>
         </button>
+        <p v-if="feedbackMessage" class="feedback-msg">{{ feedbackMessage }}</p>
       </form>
     </div>
   </div>
 </template>
 
 <script setup>
-const handleSubmit = () => {
-  // Add your form submission logic here
-  console.log("Form submitted");
+import { ref } from "vue";
+import emailjs from "@emailjs/browser";
+
+const form = ref({
+  name: "",
+  email: "",
+  message: "",
+});
+
+const isSubmitting = ref(false);
+const feedbackMessage = ref("");
+
+const handleSubmit = async () => {
+  isSubmitting.value = true;
+  feedbackMessage.value = "";
+
+  try {
+    // Replace these with your actual EmailJS credentials
+    const serviceID = "service_j01kgo8";
+    const templateID = "template_e8rfmtt";
+    const publicKey = "fI-Mu6dZZT5LfRTTf";
+
+    const templateParams = {
+      from_name: form.value.name,
+      from_email: form.value.email,
+      message: form.value.message,
+    };
+
+    await emailjs.send(serviceID, templateID, templateParams, publicKey);
+
+    feedbackMessage.value =
+      "Message sent successfully! I will get back to you soon.";
+    form.value.name = "";
+    form.value.email = "";
+    form.value.message = "";
+  } catch (error) {
+    console.error("Failed to send email:", error);
+    feedbackMessage.value = "Failed to send message. Please try again later.";
+  } finally {
+    isSubmitting.value = false;
+  }
 };
 </script>
 
@@ -314,7 +360,7 @@ a.info-card:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 0; /* Adjusted vertical padding for square-like proportions */
+  padding: 20px 0;
   color: var(--jade-secondary);
   text-decoration: none;
 }
@@ -330,13 +376,9 @@ a.info-card:hover {
   box-shadow: 0 12px 30px rgba(64, 78, 59, 0.15);
 }
 
-/* Responsive adjustment for small screens */
 @media (max-width: 480px) {
   .social-row {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* Stacks into a 2x2 grid on mobile */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -394,9 +436,6 @@ textarea.glass-input {
   gap: 12px;
   width: 100%;
   cursor: pointer;
-}
-
-.submit-btn {
   background: rgba(255, 255, 255, 0.6);
   color: var(--jade-dark);
   padding: 14px 24px;
@@ -408,16 +447,28 @@ textarea.glass-input {
   transition: all 0.3s ease;
 }
 
-.submit-btn:hover {
+.submit-btn:hover:not(:disabled) {
   background: var(--jade-primary);
   color: var(--text-light);
   border-color: var(--jade-primary);
   transform: translateY(-2px);
 }
 
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .send-icon {
   width: 18px;
   height: 18px;
+}
+
+.feedback-msg {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--jade-dark);
+  margin-top: 4px;
 }
 
 /* Responsive */
